@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <link rel="stylesheet" href="./style.css">
+  <link rel="stylesheet" href="./iconfont/iconfont.css">
+  <style>
+* {
+  margin: 0;
+  padding: 0;
+}
+body {
+  min-height: 100vh;
+  background: #409eff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.loading {
+  position: relative;
+  width: 120px;
+  height: 120px;
+  /* border: 1px solid #fff; */
+}
+.loading > span {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: rotate(calc(18deg * var(--i)));
+}
+.loading > span::before {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 0;
+  background: #fff;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  animation: smallAndBig 2s linear infinite;
+  animation-delay: calc(0.1s * var(--i));
+}
+@keyframes smallAndBig {
+  0% {
+    width: 0;
+    height: 0;
+  }
+  10% {
+    width: 18px;
+    height: 18px;
+  }
+  /* 这里如果使用100%的话第二轮刚好动画完成开始第二次动画，之所以使用80%是因为让其早点消失 使其出现出来空白区 */
+  90%,100% {
+    width: 0;
+    height: 0;
+  }
+}
+.loading .air {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 110%;
+  height: 100%;
+  /* background: red; */
+  animation: rotating 2s linear infinite;
+}
+@keyframes rotating {
+  0% {
+    transform: rotate(0)
+  }
+  100% {
+    transform: rotate(360deg)
+  }
+}
+/* 注意这里引用iconfont图标 */
+.loading .air::before {
+  content: '\e616';
+  font-family: 'iconfont';
+  position: absolute;
+  top:0px;
+  left: 0px;
+  transform: translate(-50%, -50%);
+  color: #fff;
+  font-size: 50px;
+}
+  </style>
+</head>
+
+<body>
+  <div class="loading">
+    <span style="--i:1"></span>
+    <span style="--i:2"></span>
+    <span style="--i:3"></span>
+    <span style="--i:4"></span>
+    <span style="--i:5"></span>
+    <span style="--i:6"></span>
+    <span style="--i:7"></span>
+    <span style="--i:8"></span>
+    <span style="--i:9"></span>
+    <span style="--i:10"></span>
+    <span style="--i:11"></span>
+    <span style="--i:12"></span>
+    <span style="--i:13"></span>
+    <span style="--i:14"></span>
+    <span style="--i:15"></span>
+    <span style="--i:16"></span>
+    <span style="--i:17"></span>
+    <span style="--i:18"></span>
+    <span style="--i:19"></span>
+    <span style="--i:20"></span>
+    <div class="air"></div>
+  </div>
+</body>
+
+</html>
+

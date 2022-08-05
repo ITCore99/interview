@@ -1,6 +1,6 @@
 /**
  * 获取dom树中最多的标签 想听的个数可以多个返回
- * 递归法
+ * document.querySelectorAll("*")
  * @param {*} el 
  * @returns 
  */

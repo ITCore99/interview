@@ -6,7 +6,7 @@
  */
 
 // 生成随机数
-function generatorNum(num = 100, min = 0, max = num) {
+function generatorNum(num = 4, min = 0, max = num) {
   const result = []
   for(let i = 0; i < num; i++) {
     result.push(Math.floor(Math.random() * ((max - min) + min)))
@@ -21,7 +21,9 @@ function mergeSort(arr) {
   if (arr.length < 2) return arr
   const p = Math.floor(arr.length / 2)
   const left = mergeSort(arr.slice(0, p))
+  console.log('left=>', left)
   const right = mergeSort(arr.slice(p))
+  console.log('right=>', left)
   return merge(left, right)
 }
 

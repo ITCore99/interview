@@ -9,13 +9,14 @@ function mergeOrderlyArr(arr1, arr2) {
   while(j >= 0) {
     if(i < 0) { // 说明数组1已经完毕
       arr1[insertIndex--] = arr2[j--]
+    } else {
+      arr1[insertIndex--] =  arr1[i] > arr2[j] ? arr1[i--] :  arr2[j--]
     }
-    arr1[insertIndex--] =  arr1[i] > arr2[j] ? arr1[i--] :  arr2[j--]
   }
   return arr1
 }
 
 let num1 = [3, 5, 6, 7]
 let num2 = [1, 2, 3]
-const res = mergeOrderlyArr(num1, num2)
+const res = mergeOrderlyArr(num2, num1)
 console.log('res', res)

@@ -13,7 +13,7 @@ function traverse(tree) {
       tree = tree.left
     }
     tree = stack.pop()
-    if(!tree.right || tree.right === prev) { // 存在右节点不存在或者已经遍历过
+    if(!tree.right || tree.right === prev) { // 右节点不存在或者已经遍历过
       arr.push(tree.value) // 进行打印
       prev = tree
       tree = null // 注意放置重复收集 重点
